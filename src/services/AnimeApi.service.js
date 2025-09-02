@@ -44,9 +44,8 @@ export const AnimeApiSlice = apiSliceWithRefresh.injectEndpoints({
       }),
     }),
     getAnimeSearching: builder.query({
-      query: ({ slug, ...params }) => ({
-        // CORREGIDO: Se usaron backticks (``) en lugar de barras (//)
-        url: `/searching/${slug}`,
+      query: ({ name, ...params }) => ({
+        url: `/searching/${name}`,
         params,
       }),
     }),

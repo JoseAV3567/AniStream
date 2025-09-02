@@ -225,7 +225,7 @@ export class AnimeFlvApi {
     let statuses = normalizeFilter(filters["states[]"]);
     let sort = normalizeFilter(filters["sort"]);
 
-    console.log(sort);
+    // console.log(sort);
 
     // Nombre corregido: "fetch" en lugar de "feach"
     try {
@@ -254,7 +254,7 @@ export class AnimeFlvApi {
       // 2. Espera a que la respuesta se convierta a JSON
       const data = await response.json();
       // console.log(data.data.media);
-      console.log(data);
+      // console.log(data);
 
       // 3. Retorna la data obtenida
       return new searchingDataFilter(data);
@@ -264,12 +264,12 @@ export class AnimeFlvApi {
       return null;
     }
   }
-  async fetchSearching(params) {
+  async fetchSearching(anime_name, page) {
     try {
       const {
         data: { data: response },
       } = await axios.get(
-        `https://animeflv.ahmedrangel.com/api/search?query=${params?.name}&page=${params?.page}`,
+        `https://animeflv.ahmedrangel.com/api/search?query=${anime_name}&page=${page}`,
         { headers: ANIMEFLV_HEADERS }
       );
       return new AnimeSearch(response);

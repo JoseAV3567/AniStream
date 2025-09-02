@@ -5,6 +5,7 @@ import axios from "axios";
 
 // DEPENDIENDO DE LA VARIABLE DEBUG EVALUAMOS SI NOS ENCONTRAMOS EN EL ENTORNO DE DESARROLLO O EL ENTORNO DE PRODUCCION
 export const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:3001";
+console.log(baseUrl);
 
 const axiosBaseQuery =
   ({

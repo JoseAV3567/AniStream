@@ -5,9 +5,9 @@ export class GetSearchin {
     this.animeFlvApi = new AnimeFlvApi();
   }
 
-  async execute(name_anime) {
+  async execute(name_anime, page) {
     console.log("Executing GetSearchin use case...");
-    const anime = await this.animeFlvApi.fetchSearching(name_anime);
+    const anime = await this.animeFlvApi.fetchSearching(name_anime, page);
     return anime;
   }
 }
