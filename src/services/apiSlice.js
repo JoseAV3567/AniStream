@@ -4,7 +4,7 @@ import axios from "axios";
 // DEV        export baseUrl = 'http://127.0.0.1:8000'
 
 // DEPENDIENDO DE LA VARIABLE DEBUG EVALUAMOS SI NOS ENCONTRAMOS EN EL ENTORNO DE DESARROLLO O EL ENTORNO DE PRODUCCION
-export const baseUrl = "http://localhost:3001";
+export const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
 const axiosBaseQuery =
   ({

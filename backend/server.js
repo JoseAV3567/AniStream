@@ -157,4 +157,6 @@ app.get("/api/v1/search", async (req, res) => {
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+  const publicUrl = process.env.PUBLIC_URL;
+  console.log(`El servidor está corriendo. Accede en: ${publicUrl}`);
 });
